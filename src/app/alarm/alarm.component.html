@@ -1,0 +1,17 @@
+<h3>Set Alarm</h3>
+
+    <input type="time" [(ngModel)]="alarmTime">
+    <!-- <audio #alarmAudio [src]="alarmSoundUrl"></audio>  -->
+
+    <button (click)="addAlarm()">Add Alarm</button>
+<!-- <img src="../../assets/stylish-chill-303261.mp3" alt=""> -->
+
+
+<ul>
+  <li *ngFor="let alarm of alarms; let i = index">
+    {{ alarm.time }} 
+    <button (click)="deleteAlarm(i)">Delete</button>
+    <button *ngIf="alarm.active"  (click)="snoozeAlarm(i)">Snooze</button>
+
+  </li>
+</ul>
